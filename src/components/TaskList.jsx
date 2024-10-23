@@ -23,7 +23,11 @@ function Task({ todo, handleDeleteTodo, handleEditTodo }) {
 
   return (
     <>
-      <input type="checkbox" checked={todo.done} onChange={() => ""} />
+      <input
+        type="checkbox"
+        checked={todo.done}
+        onChange={(e) => handleEditTodo({ ...todo, done: e.target.checked })}
+      />
 
       {isEdit ? (
         <EditTodo
